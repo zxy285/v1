@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 适配手机端 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易前端演示页面</title>
+    <style>
+        /* 内嵌CSS样式，无需额外文件 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f0f8ff;
+            padding: 30px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #ccc;
+        }
+        h1 {
+            color: #2255aa;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.8;
+            margin: 15px 0;
+            color: #333;
+        }
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        button {
+            padding: 10px 24px;
+            background: #2255aa;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #184077;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>简易HTML演示页面</h1>
+        <p>这是一个完整的基础前端页面，包含HTML结构 + CSS美化，双击文件即可在浏览器打开。</p >
+
+        <h3>页面包含基础标签：</h3>
+        <ul>
+            <li>标题标签 h1-h3</li>
+            <li>段落 p、无序列表 ul li</li>
+            <li>交互按钮 button</li>
+            <li>移动端自适应适配</li>
+        </ul>
+
+        <p>点击下方按钮测试交互效果：</p >
+        <button onclick="alert('页面运行成功！')">点我弹窗</button>
+    </div>
+</body>
+</html>
