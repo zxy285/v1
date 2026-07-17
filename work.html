@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Click Game</title>
+<style>
+*{margin:0;padding:0;}
+body{background:#111;display:flex;flex-direction:column;align-items:center;padding-top:30px;}
+#box{width:600px;height:400px;background:#222;position:relative;overflow:hidden;border:2px solid #666;}
+.block{width:50px;height:50px;background:#42a5f5;position:absolute;border-radius:6px;cursor:pointer;}
+.info{color:white;font-size:20px;margin-bottom:10px;}
+</style>
+</head>
+<body>
+<div class="info">Score: <span id="score">0</span> | Time: <span id="time">30</span></div>
+<div id="box"></div>
+
+<script>
+let score = 0;
+let time = 30;
+let isGameOver = false;
+const box = document.getElementById('box');
+const scoreDom = document.getElementById('score');
+const timeDom = document.getElementById('time');
+
+function createBlock(){
+    if(isGameOver) return;
+    let b = document.createElement('div');
+    b.className = "block";
+    let maxX = box.clientWidth - 50;
+    let maxY = box.clientHeight - 50;
+    b.style.left = Math.random()*maxX+"px";
+    b.style.top = Math.random()*maxY+"px";
+    b.onclick = function(){
+        if(isGameOver) return;
+        score++;
+        scoreDom.innerText=score;
+        b.remove();
+    }
+    box.appendChild(b);
+}
+
+let createTimer = setInterval(createBlock,800);
+
+let timer = setInterval(()=>{
+    time--;
+    timeDom.innerText=time;
+    if(time<=0){
+        clearInterval(timer);
+        clearInterval(createTimer);
+        isGameOver = true;
+        alert("Game Over! Your score: "+score);
+    }
+},1000);
+</script>
+</body>
+</html>
